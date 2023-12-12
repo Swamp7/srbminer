@@ -5,8 +5,8 @@ RUN rm /etc/apt/sources.list.d/cuda.list
 RUN apt update \
     && apt -y install wget \
     && wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.3/SRBMiner-Multi-2-4-3-Linux.tar.xz \
-    && tar xvzf SRBMiner-Multi-2-4-3-Linux.tar.gz \
-    && rm SRBMiner-Multi-2-4-3-Linux.tar.gz
+    && tar xvzf SRBMiner-Multi-2-4-3-Linux.tar.xz \
+    && rm SRBMiner-Multi-2-4-3-Linux.tar.xz
 
 WORKDIR /SRBMiner-Multi-2-4-3
 
