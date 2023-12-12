@@ -6,8 +6,7 @@ RUN apt update \
     && apt -y install wget \
     && apt -y install xz-utils \
     && wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.3/SRBMiner-Multi-2-4-3-Linux.tar.xz \
-    && mkdir SRBMiner-Multi-2-4-3 \
-    && tar xvf SRBMiner-Multi-2-4-3-Linux.tar.xz -C SRBMiner-Multi-2-4-3 \
+    && tar xvf SRBMiner-Multi-2-4-3-Linux.tar.xz \
     && rm SRBMiner-Multi-2-4-3-Linux.tar.xz
 
 WORKDIR /SRBMiner-Multi-2-4-3
