@@ -4,7 +4,6 @@ RUN rm /etc/apt/sources.list.d/cuda.list
 
 RUN apt update \
     && apt -y install wget \
-    && apt -y install libcurl3 \
     && apt -y install libjansson4 \
     && apt -y install xz-utils \
     && wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.5.8/SRBMiner-Multi-2-5-8-Linux.tar.xz \
