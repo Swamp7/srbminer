@@ -6,7 +6,7 @@ RUN apt update \
     && apt -y install wget \
     && apt -y install libjansson4 \
     && apt -y install xz-utils \
-    && wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.2/SRBMiner-Multi-2-6-3-Linux.tar.gz \
+    && wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.3/SRBMiner-Multi-2-6-3-Linux.tar.gz \
     && tar xvf SRBMiner-Multi-2-6-3-Linux.tar.gz \
     && rm SRBMiner-Multi-2-6-3-Linux.tar.gz \
     && ln -s libnvidia-ml.so.1 /lib/x86_64-linux-gnu/libnvidia-ml.so
