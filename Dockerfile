@@ -1,16 +1,16 @@
 FROM nvidia/cuda:12.2.2-devel-ubuntu20.04
 
-RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm -f /etc/apt/sources.list.d/cuda.list
 
-RUN apt update \
-    && apt -y install wget \
-    && apt -y install libjansson4 \
-    && apt -y install xz-utils \
-    && wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.6.3/SRBMiner-Multi-2-6-3-Linux.tar.gz \
-    && tar xvf SRBMiner-Multi-2-6-3-Linux.tar.gz \
-    && rm SRBMiner-Multi-2-6-3-Linux.tar.gz \
-    && ln -s libnvidia-ml.so.1 /lib/x86_64-linux-gnu/libnvidia-ml.so
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends wget ca-certificates libjansson4 \
+    && wget -O /tmp/srbminer.tar.gz https://github.com/doktor83/SRBMiner-Multi/releases/download/3.4.1/SRBMiner-Multi-3-4-1-Linux.tar.gz \
+    && tar -xzf /tmp/srbminer.tar.gz \
+    && rm /tmp/srbminer.tar.gz \
+    && ln -sf libnvidia-ml.so.1 /lib/x86_64-linux-gnu/libnvidia-ml.so \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /SRBMiner-Multi-2-6-3
+WORKDIR /SRBMiner-Multi-3-4-1
 
 ENTRYPOINT ["./SRBMiner-MULTI"]
