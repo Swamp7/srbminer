@@ -1,7 +1,7 @@
 FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
 
-ARG SRB_VERSION=3.6.0
-ARG SRB_DASH_VERSION=3-6-0
+ARG SRB_VERSION=3.6.3
+ARG SRB_DASH_VERSION=3-6-3
 ARG TARBALL_URL=https://github.com/doktor83/SRBMiner-Multi/releases/download/${SRB_VERSION}/SRBMiner-Multi-${SRB_DASH_VERSION}-Linux.tar.gz
 
 RUN rm -f /etc/apt/sources.list.d/cuda.list
